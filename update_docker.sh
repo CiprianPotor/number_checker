@@ -1,12 +1,11 @@
+#!/bin/bash
+
 # Check for updates (assuming you have the appropriate git commands in place)
 cd /root/SCRIPTS/app/application/
-git fetch origin   # Fetch the latest changes from the remote repository
-
-LOCAL=$(git rev-parse HEAD)             # Get the current local commit hash
-REMOTE=$(git rev-parse origin/master)   # Get the latest remote commit hash
-
-# Compare the local and remote commit hashes
-if [ $LOCAL != $REMOTE ]; then
+git fetch origin
+LOCAL=$(git rev-parse HEAD)
+REMOTE=$(git rev-parse origin/main) # Update to 'origin/main' instead of 'origin/master'
+if [ "$LOCAL" != "$REMOTE" ]; then
     # Stop and remove the existing Docker container
     docker stop myapp
     docker rm myapp
