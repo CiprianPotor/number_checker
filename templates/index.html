@@ -2,12 +2,59 @@
 <html>
 <head>
     <title>Even/Odd Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        p.error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <h1>Even/Odd Checker</h1>
 
     {% if error %}
-        <p style="color: red;">Invalid input. Please enter a valid integer.</p>
+        <p class="error-message">Invalid input. Please enter a valid integer.</p>
     {% endif %}
 
     <form method="post">
@@ -17,4 +64,3 @@
     </form>
 </body>
 </html>
-
